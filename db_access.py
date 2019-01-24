@@ -1,14 +1,13 @@
-from sqlalchemy.orm import sessionmaker, scoped_session
 from schema import *
+from helpers import *
 from exceptions import *
-from exceptions import *
-import random, string, datetime, re
+
 import uuid
 
 
-db_session = scoped_session(sessionmaker(autocommit=False,
-                                         autoflush=False,
-                                         bind=engine))
+db_session = db.scoped_session(db.sessionmaker(autocommit=False,
+                                               autoflush=False,
+                                               bind=db.engine))
 
 
 class Registration(object):
